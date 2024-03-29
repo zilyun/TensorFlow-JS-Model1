@@ -23,7 +23,7 @@
         model.compile(compileParam);
 
         var fitParam = { 
-          epochs: 3000, 
+          epochs: 100, 
           callbacks:{
             onEpochEnd:
               function(epoch, logs){
@@ -34,9 +34,8 @@
         model.fit(원인, 결과, fitParam).then(function (result) {
             var 예측한결과 = model.predict(원인);
             예측한결과.print();
-//             model.save('downloads://lemon');
-            model.save('localstorage://lemon');
-
+//             model.save('downloads://lemon'); // 파일로 저장된다.
+            model.save('localstorage://lemon'); // 브라우저에 저장된다.
         });  
 
     </script>

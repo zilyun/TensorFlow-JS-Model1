@@ -12,7 +12,7 @@
 <body>
     <script>
         tf.loadLayersModel('localstorage://lemon').then(function(model){
-                model.predict(tf.tensor([20])).print();
+                model.predict(tf.tensor([20])).print(); // 브라우저의 저장된 것을 가져와 로드한다.
         });
     </script>
 </body>

@@ -21,13 +21,13 @@
         var X = tf.input({ shape: [1] });
         var Y = tf.layers.dense({ units: 1 }).apply(X);
         var model = tf.model({ inputs: X, outputs: Y });
-        var compileParam = { optimizer: tf.train.adam(), loss: tf.losses.meanSquaredError }
+        var compileParam = { optimizer: tf.train.adam(), loss: tf.losses.meanSquaredError } // 평균 제곱 오차
         model.compile(compileParam);
 
         // 3. 데이터로 모델을 학습시킵니다. 
 //         var fitParam = {epochs: 100}
         var fitParam = { 
-          epochs: 100, 
+          epochs: 2000, 
           callbacks:{
             onEpochEnd:
               function(epoch, logs){
@@ -49,6 +49,8 @@
         // var 다음주원인 = tf.tensor(다음주온도);
         // var 다음주결과 = model.predict(다음주원인);
         // 다음주결과.print();
+
+        // 7. 정리 - 모델의 정체는 y = ax + b 이다.
     </script>
 </body>
 
